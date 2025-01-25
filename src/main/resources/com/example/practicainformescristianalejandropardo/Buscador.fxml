@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="462.0" prefWidth="448.0" style="-fx-background-color: #2c2c2c; -fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practicainformescristianalejandropardo.ControladorBuscador">
+    <children>
+        <ImageView fitHeight="115.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../imagenes/Logo.png" />
+            </image>
+        </ImageView>
+        <Pane prefHeight="313.0" prefWidth="408.0">
+            <children>
+                <ComboBox fx:id="equipos" layoutX="230.0" layoutY="88.0" prefHeight="42.0" prefWidth="147.0" style="-fx-border-color: #ff4747; -fx-prompt-text-fill: #ffffff; -fx-background-color: #2c2c2c; -fx-padding: 5px; -fx-font-size: 14px; -fx-border-radius: 3;">
+                    <tooltip>
+                        <Tooltip text="Si no seleccionas nada te enseñara el máximo de lo que elijas de toda la liga" />
+                    </tooltip>
+            </ComboBox>
+                <Label alignment="CENTER" layoutX="14.0" layoutY="72.0" prefHeight="74.0" prefWidth="196.0" style="-fx-border-color: #ff4747; -fx-border-radius: 3;" text="Selecciona el equipo" textAlignment="CENTER" textFill="WHITE" />
+            <Label alignment="CENTER" layoutX="14.0" layoutY="166.0" prefHeight="74.0" prefWidth="196.0" style="-fx-border-color: #ff4747; -fx-border-radius: 3;" text="Selecciona la posicón" textAlignment="CENTER" textFill="WHITE" />
+            <ComboBox fx:id="posicion" layoutX="230.0" layoutY="182.0" prefHeight="42.0" prefWidth="147.0" style="-fx-border-color: #ff4747; -fx-prompt-text-fill: #ffffff; -fx-background-color: #2c2c2c; -fx-padding: 5px; -fx-font-size: 14px; -fx-border-radius: 3;">
+               <tooltip>
+                  <Tooltip />
+               </tooltip>
+            </ComboBox>
+            <Button layoutX="137.0" layoutY="251.0" mnemonicParsing="false" onAction="#generar" prefHeight="42.0" prefWidth="147.0" style="-fx-background-color: #ff4747; -fx-text-fill: #ffffff;" text="Generar" />
+
+            </children>
+        </Pane>
+    </children>
+</VBox>

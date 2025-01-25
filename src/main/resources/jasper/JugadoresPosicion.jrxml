@@ -1,0 +1,129 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Ejemplo" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d3bd7591-6c99-46c2-ba07-cd8ce356ca4c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="LaLiga"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
+	<parameter name="NombreEq" class="java.lang.String"/>
+	<parameter name="LogoPath" class="java.lang.String"/>
+	<parameter name="Posicion" class="java.lang.String"/>
+	<query language="sql"><![CDATA[SELECT j.nombre AS jugador, j.posicion, j.edad, e.nombre AS equipo
+FROM Jugadores j
+JOIN Equipos e ON j.equipo_id = e.equipo_id
+WHERE j.posicion = $P{Posicion}  AND e.nombre = $P{NombreEq} 
+]]></query>
+	<field name="jugador" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="jugador"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="jugadores"/>
+	</field>
+	<field name="posicion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="posicion"/>
+		<property name="com.jaspersoft.studio.field.label" value="posicion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="jugadores"/>
+	</field>
+	<field name="edad" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="edad"/>
+		<property name="com.jaspersoft.studio.field.label" value="edad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="jugadores"/>
+	</field>
+	<field name="equipo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="equipo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipos"/>
+	</field>
+	<group name="Group1">
+		<expression><![CDATA[$F{equipo}]]></expression>
+		<groupHeader>
+			<band height="61">
+				<element kind="frame" uuid="abc3dac2-60cc-49b8-b854-b710cad4a7a1" mode="Opaque" x="0" y="0" width="555" height="61" forecolor="#FFFFFF" backcolor="#2C2C2C">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+					<element kind="staticText" uuid="06e7a4e3-affc-4181-8107-a20d9c79792f" x="136" y="15" width="100" height="30" forecolor="#FFFFFF" backcolor="#FFFFFF" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+						<text><![CDATA[Jugador]]></text>
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b61dc84c-f573-438a-b76a-2ddbd28abb01"/>
+					</element>
+					<element kind="staticText" uuid="0a879e2f-83a9-484d-8e60-100582cf408f" x="324" y="15" width="100" height="30" forecolor="#FFFFFF" markup="html" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+						<text><![CDATA[Edad]]></text>
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dddab194-220c-4717-addd-bdfaa658c8d3"/>
+					</element>
+					<box>
+						<pen lineWidth="3.0"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="3.0" lineStyle="Solid" lineColor="#FF4747"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="3.0" lineStyle="Solid" lineColor="#FF4747"/>
+					</box>
+				</element>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="61">
+				<element kind="frame" uuid="268dce6f-0c0f-40b9-947f-933b60a2280a" mode="Opaque" x="0" y="0" width="555" height="61" forecolor="#FFFFFF" backcolor="#2C2C2C">
+					<element kind="textField" uuid="02c6fc2e-53f5-4db0-9a63-1745285a5042" x="0" y="0" width="555" height="61" forecolor="#FFFFFF" fontSize="15.0" hTextAlign="Center" vTextAlign="Middle">
+						<expression><![CDATA[$F{equipo}]]></expression>
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f615594-b064-458b-83a7-69757eba94b2"/>
+						<box>
+							<pen lineWidth="3.0" lineColor="#FF4747"/>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="3.0" lineStyle="Solid" lineColor="#FF4747"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="3.0" lineStyle="Solid" lineColor="#FF4747"/>
+						</box>
+					</element>
+					<box>
+						<bottomPen lineWidth="3.0" lineColor="#FF4747"/>
+					</box>
+				</element>
+			</band>
+		</groupFooter>
+	</group>
+	<background splitType="Stretch">
+		<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+	</background>
+	<title height="128" splitType="Stretch">
+		<element kind="frame" uuid="1c432d9a-9480-4c90-8dd7-e29775ccc4a4" mode="Opaque" x="0" y="0" width="555" height="128" forecolor="#FFFFFF" backcolor="#2C2C2C">
+			<element kind="staticText" uuid="40fc573c-ee44-4912-ae61-aa95493fed15" x="201" y="39" width="19" height="3" forecolor="#FFFFFF" fontSize="20.0" hTextAlign="Center" vTextAlign="Middle">
+				<text><![CDATA[]]></text>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</element>
+			<element kind="image" uuid="c7c182c6-1b83-426f-a1eb-8c4c4159838f" x="72" y="12" width="128" height="118" hImageAlign="Left" vImageAlign="Top">
+				<expression><![CDATA[$P{LogoPath}]]></expression>
+			</element>
+			<element kind="textField" uuid="289f969a-e24e-4746-94f3-fcc7330c61ad" x="0" y="0" width="555" height="128" forecolor="#FFFFFF" fontSize="20.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{posicion}]]></expression>
+			</element>
+			<box>
+				<pen lineWidth="3.0" lineStyle="Solid" lineColor="#FF4747"/>
+				<topPen lineWidth="3.0" lineStyle="Solid" lineColor="#FF4747"/>
+				<leftPen lineWidth="3.0" lineStyle="Solid" lineColor="#FF4747"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="3.0" lineStyle="Solid" lineColor="#FF4747"/>
+			</box>
+		</element>
+	</title>
+	<detail>
+		<band height="161" splitType="Stretch">
+			<element kind="frame" uuid="69d1cdd6-daed-4d99-99e6-f81eeb9f94b6" mode="Opaque" x="0" y="0" width="555" height="161" forecolor="#FFFFFF" backcolor="#2C2C2C">
+				<element kind="textField" uuid="ad995d22-4d80-4125-a0d4-545707948adb" x="136" y="47" width="100" height="30" forecolor="#FFFFFF" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+					<expression><![CDATA[$F{jugador}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b61dc84c-f573-438a-b76a-2ddbd28abb01"/>
+				</element>
+				<element kind="textField" uuid="f2940ed7-79ca-42cb-a8ad-d62496c93807" x="324" y="47" width="100" height="30" forecolor="#FFFFFF" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+					<expression><![CDATA[$F{edad}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dddab194-220c-4717-addd-bdfaa658c8d3"/>
+				</element>
+				<box>
+					<pen lineWidth="0.0" lineColor="#030303"/>
+					<topPen lineWidth="0.0" lineColor="#030000"/>
+					<leftPen lineWidth="3.0" lineColor="#FF4747"/>
+					<bottomPen lineWidth="0.0" lineColor="#FF4747"/>
+					<rightPen lineWidth="3.0" lineColor="#FF4747"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+</jasperReport>
