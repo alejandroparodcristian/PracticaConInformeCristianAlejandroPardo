@@ -1,13 +1,19 @@
 package com.example.practicainformescristianalejandropardo;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -199,6 +205,25 @@ public class ControladorPrincipal {
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Error al generar el informe: " + e.getMessage());
+        }
+
+    }
+
+    public void abrirBuscador(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Buscador.fxml"));
+        try {
+            // Cargar la escena buscador
+            Parent root = loader.load();
+
+            // Configurar y mostrar la ventana
+            Scene escena = new Scene(root, 448, 462);
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(escena);
+            stage.setTitle("Buscador");
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException("Error al cargar la ventana de usuario: " + e.getMessage(), e);
         }
     }
 

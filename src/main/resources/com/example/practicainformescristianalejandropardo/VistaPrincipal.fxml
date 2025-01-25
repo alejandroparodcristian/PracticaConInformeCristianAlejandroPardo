@@ -29,10 +29,12 @@
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
                   <Button fx:id="maxGoleador" mnemonicParsing="false" onAction="#maximoGoleador" prefHeight="25.0" prefWidth="157.0" style="-fx-text-fill: #ffffff; -fx-background-color: #ff4747;" text="Máximo Goleador" GridPane.rowIndex="1" />
                   <Button mnemonicParsing="false" onAction="#maximoAsistente" prefHeight="25.0" prefWidth="157.0" style="-fx-text-fill: #ffffff; -fx-background-color: #ff4747;" text="Máximo Asistente" />
+                  <Button mnemonicParsing="false" onAction="#abrirBuscador" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #ff4747; -fx-text-fill: #ffffff;" text="Buscar Jugador" GridPane.rowIndex="2" />
                </children>
                <padding>
                   <Insets left="20.0" right="20.0" />
